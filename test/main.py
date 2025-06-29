@@ -2,7 +2,7 @@
 from manim import *
 
 
-class TransformExample(Scene):
+class Test(Scene):
     def construct(self):
 
         banner = ManimBanner()
