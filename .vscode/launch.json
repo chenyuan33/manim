@@ -1,0 +1,18 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Run Manim",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "\"${workspaceFolder}/run.py\"",
+			"args": [
+				"${file}"
+			],
+			"console": "integratedTerminal",
+			"env": {
+				"PYTHONPATH": "${workspaceFolder}"
+			}
+		}
+	]
+}
