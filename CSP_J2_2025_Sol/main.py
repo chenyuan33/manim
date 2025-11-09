@@ -5,19 +5,26 @@ class CSP_J2_2025_Sol(Scene):
 	def construct(self):
 		title = Text('2025 CSP-J2 视频题解')
 		self.play(Write(title), run_time=1)
+		self.wait(1)
 		title_sep = Line(UP * 2 + LEFT * 3, UP * 2 + RIGHT * 3)
-		self.play(title.animate.shift(UP * 2.5), run_time=0.5)
+		self.play(title.animate.shift(UP * 2.5), run_time=1)
+		self.wait(1)
 		self.play(title.animate.scale(0.7), Create(title_sep), run_time=1)
+		self.wait(1)
 
 		title1 = Text('T1. 拼数 / number').shift(UP * 2.5).scale(0.7)
 		self.play(ReplacementTransform(title, title1), run_time=1)
+		self.wait(1)
 		algo_step = Text('算法步骤 / Algorithm Steps').shift(UP * 1.6 + RIGHT * 2.5).scale(0.6)
 		algo_step_sep = Line(UP * 2, DOWN * 3)
 		self.play(Create(algo_step), Create(algo_step_sep), run_time=1)
+		self.wait(1)
 		how_sample = Text('290es1q0').shift(LEFT * 2.5)
 		self.play(Write(how_sample), run_time=1)
+		self.wait(1)
 		how_sample2 = Text('290es1q0', t2c={'[0:3]': RED, '[5:6]': RED, '[7:]': RED}).shift(LEFT * 2.5)
 		self.play(ReplacementTransform(how_sample, how_sample2), run_time=1)
+		self.wait(1)
 		how_sample3 = Text('290es1q0', t2c={
 			'[0:3]': RED,
 			'[3:5]': BLACK,
@@ -26,24 +33,30 @@ class CSP_J2_2025_Sol(Scene):
 			'[7:]': RED
 		}).shift(LEFT * 2.5)
 		self.play(ReplacementTransform(how_sample2, how_sample3), run_time=1)
+		self.wait(1)
 		algo_step1 = Paragraph(
 			'1. 删去不必要的非数字字符',
 			'Remove unnecessary non-numeric characters'
 		).shift(RIGHT * 3.5).scale(0.5)
 		how_sample4 = Text('29010', color=RED).shift(LEFT * 2.5)
 		self.play(Create(algo_step1), ReplacementTransform(how_sample3, how_sample4), run_time=1)
+		self.wait(1)
 		algo_step2 = Paragraph(
 			'2. 从大到小对每个数字进行排序',
 			'Sort each digit from largest to smallest.'
 		).shift(DOWN + RIGHT * 3).scale(0.5)
 		how_sample5 = Text('92100', color=RED).shift(LEFT * 2.5)
 		self.play(Create(algo_step2), ReplacementTransform(how_sample4, how_sample5), run_time=1)
+		self.wait(1)
 		self.play(Unwrite(how_sample5), Unwrite(algo_step1), Unwrite(algo_step2), run_time=1)
+		self.wait(1)
 
 		title2 = Text('T2. 座位 / seat').shift(UP * 2.5).scale(0.7)
 		self.play(ReplacementTransform(title1, title2), run_time=1)
+		self.wait(1)
 		how_sample = Paragraph('94 95 96', '97 98 99', '100 93 92', t2c={'94': RED}).shift(LEFT * 3)
 		self.play(Write(how_sample), run_time=1)
+		self.wait(1)
 		algo_step1 = Paragraph(
 			'1. 携带着一号的位置从大到小排序',
 			'Sort the positions carrying the No. 1',
@@ -51,17 +64,20 @@ class CSP_J2_2025_Sol(Scene):
 		).shift(RIGHT * 3).scale(0.5)
 		how_sample1 = Paragraph('100 99 98', '97 96 65', '94 93 92', t2c={'94' : RED}).shift(LEFT * 3)
 		self.play(Write(algo_step1), ReplacementTransform(how_sample, how_sample1), run_time=1)
+		self.wait(1)
 		how_sample2 = VGroup()
 		for i in range(2, 5):
 			for j in range(-1, 2):
 				how_sample2.add(Square(1).shift(LEFT * i + UP * j))
 		self.play(Create(how_sample2), how_sample1.animate.shift(DOWN * 2.5).scale(0.75), run_time=1)
+		self.wait(1)
 		algo_step2 = Paragraph(
 			'2. 依照题意模拟或计算出一号的位置',
 			'Simulate or calculate the position of No. 1',
 			'according to the problem statement.'
 		).shift(DOWN + RIGHT * 3.5).scale(0.5)
 		self.play(Create(algo_step2), run_time=1)
+		self.wait(1)
 		how_sample3 = VGroup()
 		for i in range(0, 9):
 			how_sample4 = Text(str(100 - i)).shift(
@@ -83,6 +99,7 @@ class CSP_J2_2025_Sol(Scene):
 		algo_step3.arrange(DOWN, 0, aligned_edge=LEFT)
 		algo_step3 = algo_step3.shift(DOWN * 2.5).scale(0.5)
 		self.play(ReplacementTransform(how_sample1, algo_step3), run_time=1)
+		self.wait(1)
 		self.play(
 			Uncreate(how_sample2),
 			Unwrite(how_sample3),
@@ -91,14 +108,18 @@ class CSP_J2_2025_Sol(Scene):
 			Unwrite(algo_step3),
 			run_time=1
 		)
+		self.wait(1)
 
 		title3 = Text('T3. 异或和 / xor').shift(UP * 2.5).scale(0.7)
 		self.play(ReplacementTransform(title2, title3), run_time=1)
+		self.wait(1)
 		algo_60pts = Text('60pts 做法 / 60-Points Method').shift(UP * 1 + RIGHT * 3.25).scale(0.65)
 		self.play(Write(algo_60pts), run_time=1)
+		self.wait(1)
 		how_sample = Text('2 1 0 3').shift(LEFT * 1.5)
 		how_sample1 = Tex('$k=3$').shift(LEFT * 4 + UP)
 		self.play(Write(how_sample), Write(how_sample1), run_time=1)
+		self.wait(1)
 		how_sample2 = VGroup(
 			Text('2', color=RED), Text('1', color=RED),
 			Text('0'), Text('3', color=BLUE)
@@ -106,6 +127,7 @@ class CSP_J2_2025_Sol(Scene):
 		how_sample2.arrange()
 		how_sample2 = how_sample2.shift(LEFT * 1.5)
 		self.play(ReplacementTransform(how_sample, how_sample2), run_time=1)
+		self.wait(1)
 		how_sample3 = VGroup(
 			Rectangle(RED, 0.5, 1).shift(LEFT * 2),
 			Rectangle(BLUE, 0.5, 0.5).shift(LEFT * 0.75),
@@ -125,11 +147,13 @@ class CSP_J2_2025_Sol(Scene):
 		how_sample2_3.arrange()
 		how_sample2_3.shift(LEFT * 1.5)
 		self.play(Write(how_sample2_2), Write(how_sample2_3), Create(how_sample3), run_time=1)
+		self.wait(1)
 		algo_60pts_step1 = Paragraph(
 			'1. 预处理前缀异或和',
 			'Preprocessing Prefix XOR Sum'
 		).shift(RIGHT * 3).scale(0.65)
 		self.play(Write(algo_60pts_step1), run_time=1)
+		self.wait(1)
 		how_sample4 = VGroup(Text('0'), Text('2'), Text('3'), Text('3'), Text('0'))
 		how_sample4.arrange()
 		how_sample4 = how_sample4.shift(DOWN + LEFT * 2)
@@ -140,6 +164,7 @@ class CSP_J2_2025_Sol(Scene):
 		for i in range(4):
 			self.play(ReplacementTransform(VGroup(how_sample2_3[i], how_sample4[i]), how_sample4[i + 1]), run_time=0.2)
 			self.add(how_sample4_2[i + 1])
+		self.wait(1)
 		self.play(
 			Unwrite(how_sample2),
 			Unwrite(how_sample2_2),
@@ -149,6 +174,7 @@ class CSP_J2_2025_Sol(Scene):
 			how_sample4_2.animate.shift(UP),
 			run_time=1
 		)
+		self.wait(1)
 		how_sample5 = VGroup(
 			Text('0', color=RED), Text('2'), Text('3', color=RED),
 			Text('3', color=BLUE), Text('0', color=BLUE)
@@ -156,6 +182,7 @@ class CSP_J2_2025_Sol(Scene):
 		how_sample5.arrange()
 		how_sample5 = how_sample5.shift(LEFT * 2)
 		self.play(ReplacementTransform(how_sample4_2, how_sample5), run_time=1)
+		self.wait(1)
 		how_sample6 = VGroup(Text('0'), Text('2'), Text('3'), Text('3'), Text('0'))
 		how_sample6.arrange()
 		how_sample6 = how_sample6.shift(LEFT * 2)
@@ -164,6 +191,7 @@ class CSP_J2_2025_Sol(Scene):
 			ReplacementTransform(how_sample5, how_sample6),
 			run_time=1
 		)
+		self.wait(1)
 		how_sample7 = VGroup(Text('0'), Text('0'), Text('1'), Text('1'), Text('2'))
 		how_sample7.arrange()
 		how_sample7 = how_sample7.shift(LEFT * 2 + DOWN)
@@ -174,6 +202,7 @@ class CSP_J2_2025_Sol(Scene):
 		for i in range(5):
 			how_sample7_last[i].shift(RIGHT * how_sample7[i].get_x() + UP * how_sample7[i].get_y())
 		self.play(Write(how_sample7[0]), Write(how_sample7_copy[0]), run_time=1)
+		self.wait(1)
 		how_sample7_inner = [-1, -1, 0, -1, 3]
 		algo_60pts_step2 = VGroup(
 			VGroup(Text('2. 动态规划：令'), Tex('$f_i$'), Text('为前'), Tex('$i$'), Text('个数的答案。')),
@@ -199,6 +228,7 @@ class CSP_J2_2025_Sol(Scene):
 		algo_60pts_step2.arrange(DOWN, aligned_edge=LEFT)
 		algo_60pts_step2 = algo_60pts_step2.shift(DOWN * 3).scale(0.5)
 		self.play(Write(algo_60pts_step2), run_time=1)
+		self.wait(1)
 		for i in range(1, 5):
 			self.play(
 				ReplacementTransform(how_sample7_copy[i - 1], how_sample7_last[i]),
@@ -217,11 +247,13 @@ class CSP_J2_2025_Sol(Scene):
 				self.add(how_sample7[i])
 				self.remove(how_sample7_last[i])
 			self.add(how_sample7_copy[i])
+		self.wait(1)
 		algo_100pts = Text('100pts 做法 / 100-points Method').shift(RIGHT * 3.25 + UP * 1).scale(0.55)
 		self.play(
 			ReplacementTransform(algo_60pts, algo_100pts),
 			Unwrite(algo_60pts_step1), run_time=1
 		)
+		self.wait(1)
 		algo_100pts_step = Paragraph(
 			'3. 注意到动态规划时只需要知道每个数字出现的',
 			'最后一个位置，因此可以用一个 map 存储每个',
@@ -233,22 +265,26 @@ class CSP_J2_2025_Sol(Scene):
 			'an optimized solution.'
 		).shift(DOWN + RIGHT * 3.5).scale(0.5)
 		self.play(Write(algo_100pts_step), run_time=1)
+		self.wait(1)
 		self.play(
 			Unwrite(how_sample1), Unwrite(how_sample6),
 			Unwrite(how_sample7), Unwrite(how_sample7_copy),
 			Unwrite(algo_60pts_step2), Unwrite(algo_100pts), Unwrite(algo_100pts_step),
 			run_time=1
 		)
+		self.wait(1)
 
-		# 3 10 8 2 2
 		title4 = Text('T4. 多边形 / polygon').shift(UP * 2.5).scale(0.7)
 		self.play(ReplacementTransform(title3, title4))
+		self.wait(1)
 		how_sample = Text('3 10 8 2 2').shift(LEFT * 2)
 		self.play(Write(how_sample), run_time=1)
+		self.wait(1)
 		how_sample1 = Text('2 2 3 8 10').shift(LEFT * 2)
 		algo_step1 = Text('1. 排序 / Sort').shift(UP + RIGHT * 2).scale(0.5)
 		self.play(
 			ReplacementTransform(how_sample, how_sample1), Write(algo_step1), run_time=1)
+		self.wait(1)
 		algo_step2 = VGroup(
 			VGroup(Text('2. 移项，问题转化为对于每一个'), Tex(r'$3\le i\le n$')),
 			VGroup(Text('以此为最大值，并在'), Tex('$i$'), Text('之前取至少三个')),
@@ -265,14 +301,17 @@ class CSP_J2_2025_Sol(Scene):
 		how_sample3 = Tex(r'$\sum_{i=1}^{m-1}l_i+l_m>2l_m$').shift(LEFT * 2 + DOWN)
 		how_sample4 = Tex(r'$\sum_{i=1}^{m-1}l_i>l_m$').shift(LEFT * 2 + DOWN)
 		self.play(Write(algo_step2), Write(how_sample2), run_time=1)
+		self.wait(1)
 		self.play(ReplacementTransform(how_sample2, how_sample3), run_time=0.5)
 		self.play(ReplacementTransform(how_sample3, how_sample4), run_time=0.5)
+		self.wait(1)
 		algo_step3 = Paragraph(
 			'3. 枚举最大值，背包求得每个数当前的可达成次数，枚举问题的反面求和。',
 			'Enumerate the maximum value, calculate the current achievable count for',
 			'each number using the knapsack problem, and sum the inverse of the problem.'
 		).shift(DOWN * 3).scale(0.5)
 		self.play(Write(algo_step3), run_time=1)
+		self.wait(1)
 		self.play(
 			Unwrite(title4), Unwrite(title_sep),
 			Unwrite(algo_step), Unwrite(algo_step_sep),
@@ -280,3 +319,4 @@ class CSP_J2_2025_Sol(Scene):
 			Unwrite(how_sample1), Unwrite(how_sample4),
 			run_time=1
 		)
+		self.wait(1)
